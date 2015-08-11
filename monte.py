@@ -1,5 +1,6 @@
 import webbrowser
 
+from matplotlib import pyplot as plt
 import random
 import psutil
 from Queue import Queue
@@ -17,6 +18,8 @@ class Monte():
         self.domain = domain
         self.trials = trials
 
+        self.data = None
+
         if type(self.domain) != list or type(self.trials) != int: 
             raise TypeError
 
@@ -27,7 +30,15 @@ class Monte():
             outcome = self.func(x)
             outcomes.append(outcome)
 
+        self.data = outcomes
         return outcomes
+
+    def plot(self):
+        if self.data == None:
+            raise RuntimeError("Test has not been run yet")
+
+        plt.hist(self.data, bins = 20)
+        plt.show()
 
     def __repr__(self):
         return "self.func: %s\nself.domain: %s\nself.trails: %d" \
@@ -39,7 +50,7 @@ def main():
     Welcome to Monte, a multithreaded Monte Carlo module, a web browser will now open with the documentation
     """
     print(message)
-    # webbrowser.open("https://www.facebook.com/")
+    webbrowser.open("https://www.facebook.com/")
 
 if __name__ == "__main__":
     main()
