@@ -1,4 +1,4 @@
-# Multithreaded Monte Carlo
+# Multithreaded Monte Carlo Testing
 
 A [Monte Carlo Simulation](#) is a simple way of testing a hypothesis. Intrinsic to the given nature of the simulation, you should be able to run each trials in parallel, given their statistically independent nature. This lends itself to using the `threading` module in Python. 
 
@@ -35,15 +35,12 @@ After generating the tester, you can run either a single-threaded or multi-threa
 ```python
 tester = Monte(f, a, trials)
 
-print "Multithreaded:"
-start = time.time()
+# multi-threaded
 results = tester.test_multi()
-print "\t", time.time() - start
 
-print "Singlethreaded:"
-start = time.time()
+# single-threaded
 results = tester.test()
-print "\t", time.time() - start
+
 ```
 which gives the following results:
 
@@ -51,7 +48,8 @@ which gives the following results:
 $ python example.py
 Started 16 threads... all threads started!
 Multithreaded:
-	7.63905215263s
+	8.11027097702
 Singlethreaded:
-	119.561699867s
+	118.53207612
 ```
+Clearly, the multithreaded version is significantly faster for testing this function.
