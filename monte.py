@@ -21,7 +21,13 @@ class Monte():
             raise TypeError("Testing with function is not yet implemented")
 
     def test(self):
-        pass
+        outcomes = []
+        for i in xrange(self.trials):
+            x = random.choice(self.domain)
+            outcome = self.func(x)
+            outcomes.append(outcome)
+
+        return outcomes
 
     def __repr__(self):
         return "self.func: %s\nself.domain: %s\nself.trails: %d" \
