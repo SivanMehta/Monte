@@ -17,8 +17,8 @@ class Monte():
         self.domain = domain
         self.trials = trials
 
-        if type(self.domain) == type(lambda x: x):
-            raise TypeError("Testing with function is not yet implemented")
+        if type(self.domain) != list or type(self.trials) != int: 
+            raise TypeError
 
     def test(self):
         outcomes = []
