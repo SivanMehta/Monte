@@ -57,7 +57,10 @@ class Monte():
         outcomes = []
         for i in xrange(self.trials):
             x = random.choice(self.domain)
-            outcome = self.func(x)
+            try:
+                outcome = self.func(*x)
+            except TypeError:
+                outcome = self.func(x)
             outcomes.append(outcome)
 
         self.data = outcomes
