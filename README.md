@@ -1,8 +1,8 @@
 # Multithreaded Monte Carlo Testing
 
-A [Monte Carlo Simulation](#) is a simple way of testing a hypothesis. Intrinsic to the given nature of the simulation, you should be able to run each trials in parallel, given their statistically independent nature. This lends itself to using the `threading` module in Python. 
+A [Monte Carlo Simulation](https://en.wikipedia.org/wiki/Monte_Carlo_method) is a simple way of testing a hypothesis. In alignment with the intrinsic nature of the simulation, you should be able to run each trials in parallel, given their statistically independent nature. This lends itself to using the `threading` module in Python. 
 
-Currently, the module contains a class, simply `Monte`. You can use this as a simple way of testing outcomes.
+Currently, the module contains a class, simply called `Monte`. You can use this as a simple way of testing outcomes.
 
 ### Usage
 
@@ -17,7 +17,7 @@ def f(x):
     return math.sin(x)
 ```
 
-Next we must define the domain over which we are testing. Ideally, we would just provide a function, but that has yet to be implemented. Instead, simply provide a `list` object. Here, we are using the numbers -1 to 1 with increments of .001.
+Next, we must define the domain over which we are testing. Ideally, we would just provide a function, but that has yet to be implemented. Instead, simply provide a `list` object. Here, we are using the numbers -1 to 1 with increments of .001.
 
 ```
 domain = map(lambda x: x/1000.0, range(-1000, 1000))
