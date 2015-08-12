@@ -39,7 +39,10 @@ class Monte():
         while True:
             x = self.q.get()
 
-            outcome = self.func(x)
+            try:
+                outcome = self.func(*x)
+            except TypeError:
+                outcome = self.func(x)
             self.data.append(outcome)
 
             self.q.task_done()
