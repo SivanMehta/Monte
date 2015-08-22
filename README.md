@@ -19,13 +19,13 @@ def f(x):
 
 Next, we must define the domain over which we are testing. Ideally, we would just provide a function, but that has yet to be implemented. Instead, simply provide a `list` object. Here, we are using the numbers -1 to 1 with increments of .001.
 
-```
+```python
 domain = map(lambda x: x/1000.0, range(-1000, 1000))
 # produces [-1.0, -0.999, -0.998 ... 0.997, 0.998, 0.999]
 ```
 Next, define the number of trials you are going to do, and create the tester!
 
-```
+```python
 trials = 10000
 tester = Monte(f, domain, trials)
 ```
