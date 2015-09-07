@@ -86,7 +86,7 @@ def main():
     Welcome to Monte, a multithreaded Monte Carlo module, a web browser will now open with the documentation
     """
     print(message)
-    webbrowser.open("https://www.facebook.com/")
+    webbrowser.open("https://github.com/SivanMehta/Monte")
 
 if __name__ == "__main__":
     main()
