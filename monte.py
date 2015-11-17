@@ -83,7 +83,7 @@ class Monte():
 
 def main():
     message = """
-    Welcome to Monte, a multithreaded Monte Carlo module, a web browser will now open with the documentation
+    Welcome to Monte, a multi-threaded Monte Carlo module, a web browser will now open with the documentation
     """
     print(message)
     webbrowser.open("https://github.com/SivanMehta/Monte")

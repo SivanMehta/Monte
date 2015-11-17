@@ -40,7 +40,6 @@ results = tester.test_multi()
 
 # single-threaded
 results = tester.test()
-
 ```
 which gives the following results:
 
